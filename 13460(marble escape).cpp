@@ -6,34 +6,34 @@ using namespace std;
 
 struct INFO {
 	int ry, rx, by, bx, count;
-}; // INFO ±¸Á¶Ã¼ Á¤ÀÇ 
+}; // INFO êµ¬ì¡°ì²´ ì •ì˜ 
 
-INFO start; // srart ¶ó´Â ±¸Á¶Ã¼ ¾µ°Å¶ó°í ¼±¾ğ 
-char map[10][11]; // Áöµµ ¼±¾ğ 
+INFO start; // srart ë¼ëŠ” êµ¬ì¡°ì²´ ì“¸ê±°ë¼ê³  ì„ ì–¸ 
+char map[10][11]; // ì§€ë„ ì„ ì–¸ 
 
 
-// bfs ÇÔ¼ö 
+// bfs í•¨ìˆ˜ 
 int bfs() {
 	const int dy[] = { -1, 1, 0, 0 };
 	const int dx[] = { 0, 0, -1, 1 };
 
 	int visited[10][10][10][10] = { 0, }; //
-	queue<INFO> q; //queue ±¸Á¶Ã¼  q  ¼±¾ğ 
-	q.push(start); // q.³ÖÀÚ(start °ª) 
-	visited[start.ry][start.rx][start.by][start.bx] = 1; // ¹æ¹®Çß¾ú´ÂÁö ¿©ºÎ ÆÇ´ÜÀ§ÇØ ¼±¾ğ 
+	queue<INFO> q; //queue êµ¬ì¡°ì²´  q  ì„ ì–¸ 
+	q.push(start); // q.ë„£ì(start ê°’) 
+	visited[start.ry][start.rx][start.by][start.bx] = 1; // ë°©ë¬¸í–ˆì—ˆëŠ”ì§€ ì—¬ë¶€ íŒë‹¨ìœ„í•´ ì„ ì–¸ 
 	
-	int ret = -1; //°á°ú°ª°ª 
-	while (!q.empty()) {//q°¡ ºñ¾îÀÖÁö ¾ÊÀ¸¸é °è¼Ó ½ÇÇà 
-		INFO cur = q.front();	//q ¸Ç¾Õ¿¡ ÀÖ´Â info±¸Á¶Ã¼ °¡Á®¿È 
-		q.pop(); // q¿¡¼­ ¸Ç ¾Õ¿¡ ÀÖ´Â °ª Áö¿ì±â 
-		if (cur.count > 10)	break; //10¹ø ÀÌ³»¿¡ ¼öÇàÇÏ´ÂÁö ¿©ºÎ ÆÇ´Ü 
-		if (map[cur.ry][cur.rx] == 'O' && map[cur.by][cur.bx] != 'O') //´Ù³¡³ª¸é ÇöÀç »óÅÂ °á°ú°ª ÁÖ±â 
+	int ret = -1; //ê²°ê³¼ê°’ê°’ 
+	while (!q.empty()) {//qê°€ ë¹„ì–´ìˆì§€ ì•Šìœ¼ë©´ ê³„ì† ì‹¤í–‰ 
+		INFO cur = q.front();	//q ë§¨ì•ì— ìˆëŠ” infoêµ¬ì¡°ì²´ ê°€ì ¸ì˜´ 
+		q.pop(); // qì—ì„œ ë§¨ ì•ì— ìˆëŠ” ê°’ ì§€ìš°ê¸° 
+		if (cur.count > 10)	break; //10ë²ˆ ì´ë‚´ì— ìˆ˜í–‰í•˜ëŠ”ì§€ ì—¬ë¶€ íŒë‹¨ 
+		if (map[cur.ry][cur.rx] == 'O' && map[cur.by][cur.bx] != 'O') //ë‹¤ëë‚˜ë©´ í˜„ì¬ ìƒíƒœ ê²°ê³¼ê°’ ì£¼ê¸° 
 		{
 			ret = cur.count;
 			break;
 		}
 
-		for (int dir = 0; dir < 4; ++dir) //¹æÇâ¿¡ µû¶ó ¿òÁ÷ÀÓ 
+		for (int dir = 0; dir < 4; ++dir) //ë°©í–¥ì— ë”°ë¼ ì›€ì§ì„ 
 		{
 			int next_ry = cur.ry;
 			int next_rx = cur.rx;
