@@ -33,5 +33,4 @@ int count_people(int k, int n)
 	}
 	
 	return apt[k][n];
-	
 }
