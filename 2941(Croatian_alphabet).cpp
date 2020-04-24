@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <string>
 using namespace std;
 
@@ -30,9 +31,6 @@ int main()
 					ret--;
 				break;
 			case 'l':
-				if(input[i+1] == 'j')
-					ret--;
-				break;
 			case 'n':
 				if(input[i+1] == 'j')
 					ret--;
