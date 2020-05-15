@@ -12,8 +12,7 @@ double two_dot(int x1, int y1, int x2, int y2)
 
 int main()
 {
-	int i;
-	int T;
+	int i, T;
 	int x1, y1, r1;
 	int x2, y2, r2;
 	double len, r_sum;
@@ -29,47 +28,24 @@ int main()
 
 		if(x1==x2 && y1==y2)
 		{
-			if(len == (double)(r1+r2))
-			{
+			if(r1 == r2)
 				cout << -1<<"\n";
-				continue;
-			}
 			else
-			{
 				cout << 0<<"\n";
-				continue;
-			}
 		}
-
-		if(len > r_sum)
-		{
+		else if(len > r_sum)
 			cout << 0 <<"\n";
-			continue;
-		}
 		else if(len == r_sum)
-		{
 			cout << 1 <<"\n";
-			continue;
-		}
 		else
 		{
 			if((r2 > len + r1)||(r1 > len + r2))
-			{
 				cout <<0 <<"\n";
-				continue;
-			}
 			else if((r2 == len + r1)||(r1 == len + r2))
-			{
 				cout << 1 << "\n";
-				continue;
-			}
 			else
-			{
 				cout << 2 << "\n";
-				continue;
-			}
 		}
-
 	}
 	return 0;
 }
