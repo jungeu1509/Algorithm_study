@@ -11,8 +11,8 @@ int fib(int input)
 
 int main()
 {
-	int N;
-	cin >> N;
+  int N;
+  cin >> N;
   cout << fib(N) << '\n';
-	return 0;
+  return 0;
 }
