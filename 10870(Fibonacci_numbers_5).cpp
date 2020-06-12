@@ -3,12 +3,10 @@ using namespace std;
 
 int fib(int input)
 {
-  if(input == 0)
-    return 0;
-  else if(input == 1)
-    return 1;
+  if(input == 0 || input == 1)
+    return input;
   else
-    return fib(input - 1) + fib(input -2);
+    return fib(input - 1) + fib(input - 2);
 }
 
 int main()
