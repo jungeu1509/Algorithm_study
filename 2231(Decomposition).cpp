@@ -27,10 +27,10 @@ int main()
     }
     
     if(sum == N)
-		{
-      cout << i;
-			return 0;
-		}
+    {
+	    cout << i;
+	    return 0;
+    }
   }
   
   cout << '0';
