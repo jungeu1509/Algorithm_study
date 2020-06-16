@@ -5,12 +5,11 @@ typedef struct
 {
     int x;
     int y;
-    int rank;
 }Info;
 
 int main()
 {
-    Info person[200] = {0, };
+    Info person[200];
     int N;
 
     cin >> N;
@@ -19,10 +18,11 @@ int main()
         cin >> person[i].x >> person[i].y;
     for(int i = 0; i < N; i++)
     {
+        int rank=0;
         for(int j = 0; j < N; j++)
             if((person[i].x < person[j].x) && (person[i].y < person[j].y))
-                person[i].rank++;
-        cout << person[i].rank + 1 << '\n';
+                rank++;
+        cout << rank + 1 << '\n';
     }
 
     return 0;
