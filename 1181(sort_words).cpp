@@ -19,19 +19,15 @@ int main() {
     {
         cin >> word[j];
         for(int k = 0; k < j; k++)
-        {
             if(word[j] == word[k])
             {
                 j--;
                 break;
             }
-        }
         j++;
     }
     sort(word, word+j, compare);
     for(int i = 0; i < j; i++)
-    {
         cout << word[i] <<"\n";
-    }
     return 0;
 }
