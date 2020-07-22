@@ -29,23 +29,14 @@ void init_deque()
 void push_front(int x)
 {
     deque[deque_state.front] = x;
-
-    if(deque_state.front == MAX_DEQUE_SIZE - 1)
-        deque_state.front = 0;
-    else
-        deque_state.front++;
+    deque_state.front = (deque_state.front + 1) % MAX_DEQUE_SIZE;
     deque_state.size++;
-
     return;
 }
 
 void push_back(int x)
 {
-    if(deque_state.rear == 0)
-        deque_state.rear = MAX_DEQUE_SIZE - 1;
-    else
-        deque_state.rear--;
-
+    deque_state.rear = (deque_state.rear - 1 + MAX_DEQUE_SIZE) % MAX_DEQUE_SIZE;
     deque[deque_state.rear] = x;
     deque_state.size++;
     return ;
@@ -57,10 +48,7 @@ int pop_front()
     if(deque_state.size == 0)
         return -1;
 
-    if(deque_state.front == 0)
-        deque_state.front = MAX_DEQUE_SIZE -1;
-    else
-        deque_state.front--;
+    deque_state.front = (deque_state.front - 1 + MAX_DEQUE_SIZE ) % MAX_DEQUE_SIZE;
 
     temp = deque[deque_state.front];
     deque[deque_state.front] = 0;
@@ -76,10 +64,9 @@ int pop_back()
 
     int temp = deque[deque_state.rear];
     deque[deque_state.rear] = 0;
-    if(deque_state.rear == MAX_DEQUE_SIZE - 1)
-        deque_state.rear = 0;
-    else
-        deque_state.rear++;
+
+    deque_state.rear = (deque_state.rear + 1 ) % MAX_DEQUE_SIZE;
+
     deque_state.size--;
     return temp;
 }
@@ -112,11 +99,10 @@ int back()
 int main()
 {
     ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
-    int N;
+    int N, n;
     string command;
-    int n;
+    init_deque();
     cin >> N;
-
     for(int i=0; i<N; i++)
     {
         cin >> command;
@@ -143,6 +129,5 @@ int main()
         else if(command == "back")
             cout << back() << "\n";
     }
-
     return 0;
 }
