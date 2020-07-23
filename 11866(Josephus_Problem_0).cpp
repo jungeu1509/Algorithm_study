@@ -19,11 +19,10 @@ int main()
         list[i].number = i;
         list[i].next = &list[(i % N) + 1];
     }
-    past_data = &list[N];
+    past_data = &list[--i];
     cur_data = &list[1];
     count = 1;
     cout << "<";
-    i--;
     while(i > 0)
     {
         if(count == K)
