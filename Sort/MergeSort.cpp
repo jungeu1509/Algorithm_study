@@ -1,14 +1,11 @@
 #include <iostream>
 #include "MergeSort.h"
-#include "ESort.h"
 using namespace std;
 
 void MergeSort::Sort(int *data, int max_index){
-    ESort E;
     cout << "\n\nRun Merge Sort\n\n";
     set_size(max_index);
     run(data, 0, max_index - 1);
-    
     return;
 }
 

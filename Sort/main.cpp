@@ -5,6 +5,7 @@
 #include "BubbleSort.h"
 #include "InsertionSort.h"
 #include "MergeSort.h"
+#include "QuickSort.h"
 
 using namespace std;
 
@@ -13,7 +14,8 @@ int main (void) {
     // SelectionSort Test;
     // BubbleSort Test;
     // InsertionSort Test;
-    MergeSort Test;
+    // MergeSort Test;
+    QuickSort Test;
 
     ESort E;
     /* Original Data */
