@@ -6,6 +6,7 @@
 #include "InsertionSort.h"
 #include "MergeSort.h"
 #include "QuickSort.h"
+#include "Heapsort.h"
 
 using namespace std;
 
@@ -15,11 +16,12 @@ int main (void) {
     // BubbleSort Test;
     // InsertionSort Test;
     // MergeSort Test;
-    QuickSort Test;
+    // QuickSort Test;
+    HeapSort Test;
 
     ESort E;
     /* Original Data */
-    int data[] = {-1, 0,9,4,7,2,1, -100};
+    int data[] = {-1, 0, 9, 4, 7, 2, 1, -100};
 
     /* Copy the data to answer correct sort data */
     int data_size = sizeof(data)/sizeof(int);
