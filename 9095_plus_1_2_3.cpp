@@ -5,7 +5,8 @@ unsigned int data[12];
 
 int myfunc(int A) {
     if(data[A] > 0) return data[A];
-    return myfunc(A-1) + myfunc(A-2) + myfunc(A-3);
+    data[A] = myfunc(A-1) + myfunc(A-2) + myfunc(A-3);
+    return data[A];
 }
 
 int main(){
