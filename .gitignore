@@ -1,2 +1,2 @@
-buildtest/*.out
+*.out
 .DS_Store
