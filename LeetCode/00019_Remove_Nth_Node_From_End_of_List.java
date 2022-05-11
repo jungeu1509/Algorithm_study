@@ -17,6 +17,7 @@ class Solution {
         ListNode now = head.next;
         while(now != null) {
             size++;
+            
             if(now.next == null) break;
             else now = now.next;
         }
@@ -29,18 +30,14 @@ class Solution {
             // 다음 노드 탐색
             if(i != 1) {
                 before = now;
-                now = now;
                 now = now.next;
             }
 
             // 해당 위치 연결 끊기
             if(i == size - n + 1) {
-                // 연결 끊어버리기
                 if(i==1) answer = head.next;
-                else {
-                    before.next = now.next;
-                }
-
+                else before.next = now.next;
+                
                 break;
             }
         } // end for
