@@ -1,5 +1,7 @@
 [헤더]
+```c++
   #include <queue>
+```
 
 [정의]
   priority_queue<자료형, 구현체, 비교 연산자>
