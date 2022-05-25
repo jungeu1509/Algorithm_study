@@ -36,7 +36,7 @@ class Solution {
         PriorityQueue<Road> pQueue= new PriorityQueue<>();
         pQueue.add(new Road(start, 0));
         
-        // 최장거리 표 선언 및 초기화
+        // 최고 가능성 표 선언 및 초기화
         double[] map = new double[n+1];
         Arrays.fill(map, INF);
         map[start] = 0;
